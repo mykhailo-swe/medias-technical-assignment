@@ -58,3 +58,27 @@ The application should now be running locally. You can access it at http://local
 Make sure the PostgreSQL server is running before starting the application.
 
 If you encounter any issues during setup or while running the application, refer to the project's documentation or seek assistance from the project maintainers.
+
+### Endpoints
+
+1. **Create Product**
+
+   - POST `/products`
+   - Body: `{ "name": "Product Name" }`
+
+2. **Process Incoming Invoice**
+
+   - POST `/arrivals`
+   - Body: `{ "date": "2024-05-21", "products": [{ "productId": 1, "price": 100, "quantity": 10 }] }`
+
+3. **Process Outgoing Invoice**
+
+   - POST `/orders`
+   - Body: `{ "date": "2024-05-21", "products": [{ "productId": 1, "price": 100, "quantity": 5 }] }`
+
+4. **Get Cost on Date**
+
+   - GET `/cost/:id?date=2024-05-21`
+
+5. **Generate Report**
+   - GET `/report?from=2024-05-01&to=2024-05-21`
